@@ -108,38 +108,14 @@ You will need to enter the following information:
 Configuration
 =============
 
-Configure port
---------------
+Configure web server
+--------------------
 
-Since Node.js applications use their own webserver, you need to find a free port and bind your application to it.
+.. note::
 
-.. include:: includes/generate-port.rst
+    Ghost is running on port 2369.
 
-Change the configuration
-------------------------
-
-You need to adjust your ``~/ghost/config.production.json`` with the new port. Find the following code block and change port 2369 to your own port:
-
-::
-
- "server": {
-   "port": 2369,
-   "host": "127.0.0.1"
- },
-
-In our example this would be:
-
-::
-
- "server": {
-   "port": 9000,
-   "host": "127.0.0.1"
- },
-
-Setup .htaccess
----------------
-
-.. include:: includes/proxy-rewrite.rst
+.. include:: includes/web-backend.rst
 
 Setup daemon
 ------------
