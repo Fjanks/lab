@@ -71,13 +71,6 @@ Then run the etherpad script, to install the dependencies:
 Configuration
 =============
 
-Configure port
---------------
-
-Since Node.js applications use their own webserver, you need to find a free port and bind your application to it.
-
-.. include:: includes/generate-port.rst
-
 Set up a Database
 -----------------
 
@@ -91,16 +84,7 @@ Run the following code to create the database ``<username>_etherpad`` in MySQL:
 Change the configuration
 ------------------------
 
-You need to adjust your ``~/etherpad/settings.json`` with the new port. Find the following code block and change port 9001 to your own port:
-
-.. code-block:: none
- :emphasize-lines: 3
-
-  //IP and port which etherpad should bind at
-  "ip": "0.0.0.0",
-  "port" : 9001,
-
-You also need to set up the MySQL_ database settings, therefore you should completely replace these codeblocks:
+You need to set up the MySQL_ database settings in ``~/etherpad/settings.json``. Completely replace these codeblocks:
 
 .. code-block:: none
 
@@ -138,10 +122,15 @@ with the following. Be sure to replace ``<username>`` with your username (2 time
                     "charset" : "utf8mb4"
                   },
 
-Setup .htaccess
----------------
 
-.. include:: includes/proxy-rewrite.rst
+Configure web server
+--------------------
+
+.. note::
+
+    etherpad-lite is running on port 9001.
+
+.. include:: includes/web-backend.rst
 
 Setup daemon
 ------------
