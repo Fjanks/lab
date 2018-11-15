@@ -199,7 +199,7 @@ enter your sql credetials in ``.sequelizerc``:
       'config':          path.resolve('config.json'),
       'migrations-path': path.resolve('lib', 'migrations'),
       'models-path':     path.resolve('lib', 'models'),
-      'url':             'mysql://<username>:<mysql_pw>@localhost:3306/<username>_codimd'
+      'url':             'mysql://<username>:<mysql_pw>@127.0.0.1:3306/<username>_codimd'
   }
 
 In our example this would be:
@@ -213,7 +213,7 @@ In our example this would be:
       'config':          path.resolve('config.json'),
       'migrations-path': path.resolve('lib', 'migrations'),
       'models-path':     path.resolve('lib', 'models'),
-      'url':             'mysql://isabell:MySuperSecretPassword@localhost:3306/isabell_codimd'
+      'url':             'mysql://isabell:MySuperSecretPassword@127.0.0.1:3306/isabell_codimd'
   }
 
 Setup daemon
@@ -243,7 +243,7 @@ Create a file ``~/etc/services.d/codimd.ini`` and put the following in it:
   	CMD_ALLOW_EMAIL_REGISTER=false,
       CMD_IMAGE_UPLOAD_TYPE=filesystem,
   	CMD_PROTOCOL_USESSL=true,
-  	CMD_DB_URL="mysql://<username>:<mysql_pw>@localhost:3306/<username>_codimd",
+  	CMD_DB_URL="mysql://<username>:<mysql_pw>@127.0.0.1:3306/<username>_codimd",
 
   directory=/home/<username>/codimd
   command=node app.js
@@ -307,7 +307,7 @@ Since we don’t want to run a public instance and have disabled registration, w
 .. code-block:: console
 
   [isabell@stardust ~]$ cd ~/codimd
-  [isabell@stardust codimd]$ CMD_DB_URL="mysql://<username>:<mysql_pw>@localhost:3306/<username>_codimd" bin/manage_users --add isabell@uber.space
+  [isabell@stardust codimd]$ CMD_DB_URL="mysql://<username>:<mysql_pw>@127.0.0.1:3306/<username>_codimd" bin/manage_users --add isabell@uber.space
   [isabell@stardust codimd]$
 
 It will prompt you for a password now.
