@@ -335,9 +335,6 @@ In order for your CodeMD instance to be reachable from the web, you need to put 
   DirectoryIndex disabled
 
   RewriteEngine On
-  RewriteCond %{HTTPS} !=on
-  RewriteCond %{ENV:HTTPS} !=on
-  RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
   RewriteRule (.*) http://localhost:<PORT>/$1 [P]
 
 Again, don't forget to fill in your port number in the last line!
