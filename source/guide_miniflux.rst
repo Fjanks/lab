@@ -129,7 +129,7 @@ Define the environment variable ``DATABASE_URL`` first for temporary usage. Afte
 .. code-block:: console
  :emphasize-lines: 1
 
-  [isabell@stardust ~]$ export DATABASE_URL="user=isabell password=MySuperSecretPassword dbname=miniflux2 sslmode=disable host=localhost port=MyPostgreSQLPort"
+  [isabell@stardust ~]$ export DATABASE_URL="user=isabell password=MySuperSecretPassword dbname=miniflux2 sslmode=disable host=localhost"
   [isabell@stardust ~]$ miniflux-linux-amd64 -migrate
   Current schema version: 0
   Latest schema version: 16
@@ -155,7 +155,7 @@ Create ``~/etc/services.d/miniflux.ini`` with the following content:
  environment =
   LISTEN_ADDR="0.0.0.0:9000",
   BASE_URL="https://isabell.uber.space",
-  DATABASE_URL="user=isabell password=MySuperSecretPassword dbname=miniflux2 sslmode=disable host=localhost port=MyPostgreSQLPort"
+  DATABASE_URL="user=isabell password=MySuperSecretPassword dbname=miniflux2 sslmode=disable host=localhost"
  command=/home/<username>/bin/miniflux-linux-amd64
 
 
