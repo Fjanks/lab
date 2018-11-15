@@ -113,7 +113,7 @@ Configure web server
 
 .. note::
 
-    Ghost is running on port 2369.
+    Ghost is running on port 2368.
 
 .. include:: includes/web-backend.rst
 
