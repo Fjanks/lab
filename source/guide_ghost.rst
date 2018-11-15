@@ -40,13 +40,6 @@ Your blog URL needs to be setup:
 
 .. include:: includes/web-domain-list.rst
 
-You need to know your network namespace's IP address. Get it with this snippet:
-
-::
-
- [isabell@stardust ~]$ ifconfig veth_$USER | grep "inet " | awk '{ print $2}'
- 100.64.10.2
-
 Installation
 ============
 
@@ -118,7 +111,7 @@ Configuration
 Change network interface
 ------------------------
 
-Edit ``~/ghost/config.production.json`` and change the host IP address to your network namespace's IP:
+Edit ``~/ghost/config.production.json`` and change the host IP address to ``0.0.0.0``:
 
 .. code-block:: none
  :emphasize-lines: 5
@@ -127,7 +120,7 @@ Edit ``~/ghost/config.production.json`` and change the host IP address to your n
    "url": "https://isabell.uber.space",
    "server": {
      "port": 2368,
-     "host": "100.64.10.2"
+     "host": "0.0.0.0"
    },
 
 Configure web server
