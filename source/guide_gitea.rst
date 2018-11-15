@@ -86,13 +86,12 @@ You need to create a custom directory
   [isabell@stardust ~]$
 
 
-and a new config file at ``~/gitea/custom/conf/app.ini`` to specify the
-desired port, domain and disable public registration:
+and a new config file at ``~/gitea/custom/conf/app.ini`` to specify the port and domain and to disable public registration:
 
 .. code-block:: ini
 
   [server]
-  HTTP_PORT = 9000
+  HTTP_PORT = 3000
   DOMAIN = isabell.uber.space
   ROOT_URL = https://%(DOMAIN)s
 
@@ -118,19 +117,17 @@ Create ``~/etc/services.d/gitea.ini`` with the following content:
 
 .. warning:: Replace ``<username>`` with your username!
 
-.. warning:: Replace ``<yourport>`` with your port!
-
 .. code-block:: ini
 
   [program:gitea]
-  command=/home/<username>/gitea/gitea web -port <yourport>
+  command=/home/<username>/gitea/gitea web -port 3000
 
 In our example this would be:
 
 .. code-block:: ini
 
   [program:gitea]
-  command=/home/isabell/gitea/gitea web -port 9000
+  command=/home/isabell/gitea/gitea web -port 3000
 
 Tell ``supervisord`` to refresh its configuration and start the service:
 
