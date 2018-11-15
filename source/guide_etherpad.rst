@@ -45,7 +45,7 @@ First get the Etherpad Lite source code from Github_, be sure to replace the pse
 
 .. code-block:: console
 
-  [isabell@stardust ~]$ git clone --branch release/66.6.6 https://github.com/ether/etherpad-lite ~/etherpad
+  [isabell@stardust ~]$ git clone --branch 66.6.6 https://github.com/ether/etherpad-lite ~/etherpad
   Cloning into '/home/isabell/etherpad'...
   remote: Counting objects: 29789, done.
   remote: Compressing objects: 100% (14/14), done.
