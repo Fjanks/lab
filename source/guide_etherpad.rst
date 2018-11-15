@@ -122,7 +122,6 @@ with the following. Be sure to replace ``<username>`` with your username (2 time
                     "charset" : "utf8mb4"
                   },
 
-
 Configure web server
 --------------------
 
