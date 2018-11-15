@@ -222,7 +222,7 @@ Setup daemon
 Create a file ``~/etc/services.d/codimd.ini`` and put the following in it:
 
 .. code-block:: ini
-  :emphasize-lines: 6, 7, 8, 20
+  :emphasize-lines: 6, 8, 20
 
   [supervisord]
   loglevel=warn
@@ -272,14 +272,14 @@ In our example this would be:
   	CMD_ALLOW_EMAIL_REGISTER=false,
   	CMD_IMAGE_UPLOAD_TYPE=filesystem,
   	CMD_PROTOCOL_USESSL=true,
-  	CMD_DB_URL="mysql://isabell:MySuperSecretPassword@localhost:3306/isabell_codimd",
+  	CMD_DB_URL="mysql://isabell:MySuperSecretPassword@127.0.0.1:3306/isabell_codimd",
 
   directory=/home/isabell/codimd
   command=node app.js
 
 
 
-Replace the values in ``CMD_SESSION_SECRET``, ``CMD_DOMAIN``, ``CMD_PORT`` and ``CMD_DB_URL`` and you're good to go!
+Replace the values in ``CMD_SESSION_SECRET``, ``CMD_DOMAIN``, and ``CMD_DB_URL`` and you're good to go!
 
 See `here <https://github.com/hackmdio/codimd#environment-variables-will-overwrite-other-server-configs>`_ for a detailed look at what these options do.
 
