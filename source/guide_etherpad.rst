@@ -112,15 +112,15 @@ with the following. Be sure to replace ``<username>`` with your username (2 time
 .. code-block:: none
  :emphasize-lines: 4,6,7
 
-  //MySQL Configuration
-  "dbType" : "mysql",
-  "dbSettings" : {
-                    "user"    : "<username>",
-                    "host"    : "localhost",
-                    "password": "<mysql_password>",
-                    "database": "<username>_etherpad",
-                    "charset" : "utf8mb4"
-                  },
+ //MySQL Configuration
+ "dbType" : "mysql",
+ "dbSettings" : {
+                   "user"    : "<username>",
+                   "host"    : "localhost",
+                   "password": "<mysql_password>",
+                   "database": "<username>_etherpad",
+                   "charset" : "utf8mb4"
+                 },
 
 Configure web server
 --------------------
