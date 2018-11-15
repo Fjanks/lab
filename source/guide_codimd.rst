@@ -172,14 +172,6 @@ I don’t know why, but when I tried it, CodiMD ignored the config files. So we�
 
 That’s all. The actual configuration will be done through environment!
 
-Configure port
---------------
-
-Since CodiMD uses its own webserver, you need to find a free port and bind your application to it.
-
-.. include:: includes/generate-port.rst
-
-
 Get Session Cookie
 ------------------
 
@@ -239,7 +231,7 @@ loglevel=warn
 environment=
 	CMD_SESSION_SECRET="<random>",
 	CMD_DOMAIN="<domain>",
-	CMD_PORT=<port>,
+	CMD_PORT=60101,
 	NODE_ENV="production",
 	CMD_USECDN=false,
 	CMD_ALLOW_ANONYMOUS=false,
@@ -268,7 +260,7 @@ loglevel=warn
 environment=
 	CMD_SESSION_SECRET="extremerandom",
 	CMD_DOMAIN="isabell.uber.space",
-	CMD_PORT=9000,
+	CMD_PORT=60101,
 	NODE_ENV="production",
 	CMD_USECDN=false,
 	CMD_ALLOW_ANONYMOUS=false,
@@ -328,16 +320,11 @@ It will prompt you for a password now.
 Configure web server
 --------------------
 
-In order for your CodeMD instance to be reachable from the web, you need to put a file called ``.htaccess`` into your ``~/html`` folder (or any other DocumentRoot, see the `document root`_ for details), with the following content:
+.. note::
 
-.. code-block:: ini
+    CodeiMD is running on port 60101.
 
-  DirectoryIndex disabled
-
-  RewriteEngine On
-  RewriteRule (.*) http://localhost:<PORT>/$1 [P]
-
-Again, don't forget to fill in your port number in the last line!
+.. include:: includes/web-backend.rst
 
 And you're done!
 
