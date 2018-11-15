@@ -106,7 +106,7 @@ Configure web server
 
 .. note::
 
-    Embetty is running on port 3000.
+    Embetty is running on port 3000. If you want to host Embetty on the same Uberspace as your website, use ``/embetty`` as URI.
 
 .. include:: includes/web-backend.rst
 
